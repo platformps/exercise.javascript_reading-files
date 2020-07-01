@@ -12,7 +12,8 @@ function getSingleFileAsText(evt) {
         fileReader.onload = function(event) {
             let contents = event.target.result;
             let words = getWords(contents);
-           console.log(contents);         
+           console.log(words);         
+           //this time console logged with "words" - console log "contents" and "words" both yield the same result!
         }
         return fileReader.readAsText(file);
     }
