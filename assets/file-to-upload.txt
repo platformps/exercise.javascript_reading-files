@@ -1,4 +1,4 @@
 the quick brown fox jumps over the lazy dog
-aerial reconaissance vehicle
-zeta reticuli constellation
-stellated tetrahedron
+Some text to be read by the console.
+This is a test....test....test
+Long weekend HURRAY!!!
