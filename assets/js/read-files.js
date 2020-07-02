@@ -1,7 +1,13 @@
+let fileInput = document.getElementById('fileinput');
+fileInput.addEventListener('change', getSingleFileAsText, false);
+
+
+
 function printSingleFileAsText(evt) {
     let fileContent = getSingleFileAsText(evt);
     console.log(fileContent);
 }
+
 
 function getSingleFileAsText(evt) {
     //Retrieve the first (and only!) File from the FileList object
@@ -12,9 +18,12 @@ function getSingleFileAsText(evt) {
         fileReader.onload = function(event) {
             let contents = event.target.result;
             let words = getWords(contents);
+            console.log (" The content in the file  " + "\n"+ words)
         }
+
         return fileReader.readAsText(file)
     }
+
 }
 
 function getWords(s) {
@@ -28,5 +37,5 @@ function getWords(s) {
 }
 
 
-let fileInput = document.getElementById('fileinput');
-fileInput.addEventListener('change', getSingleFileAsText, false);
+
+
