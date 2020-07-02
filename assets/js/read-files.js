@@ -11,9 +11,11 @@ function getSingleFileAsText(evt) {
         let fileReader = new FileReader();
         fileReader.onload = function(event) {
             let contents = event.target.result;
-            let words = getWords(contents);
+           let words = getWords(contents);
+         console.log(words);
         }
-        return fileReader.readAsText(file)
+        return  fileReader.readAsText(file);
+        
     }
 }
 
