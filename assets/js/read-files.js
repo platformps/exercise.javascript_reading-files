@@ -12,6 +12,10 @@ function getSingleFileAsText(evt) {
         fileReader.onload = function(event) {
             let contents = event.target.result;
             let words = getWords(contents);
+            //trying this out...
+            var text = fs.readFileSync(file,'utf8')
+            console.log (text)
+       
         }
         return fileReader.readAsText(file)
     }
@@ -30,3 +34,10 @@ function getWords(s) {
 
 let fileInput = document.getElementById('fileinput');
 fileInput.addEventListener('change', getSingleFileAsText, false);
+/*
+//printSingleFileAsText(); //call function to display text
+fileinput.addEventListener('load', function(contents) {    
+     var text = contents.target.result;
+     console.log(text);
+});  
+*/
