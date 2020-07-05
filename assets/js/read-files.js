@@ -1,3 +1,4 @@
+
 function printSingleFileAsText(evt) {
     let fileContent = getSingleFileAsText(evt);
     console.log(fileContent);
@@ -5,14 +6,18 @@ function printSingleFileAsText(evt) {
 
 function getSingleFileAsText(evt) {
     //Retrieve the first (and only!) File from the FileList object
-    let result = "";
+    //let result = "";
+    //console.log ("Inside Loop");
     let file = evt.target.files[0];
     if (file) {
         let fileReader = new FileReader();
         fileReader.onload = function(event) {
+            //console.log ("Inside Loop 2" );
             let contents = event.target.result;
             let words = getWords(contents);
+            console.log (words);
         }
+        //console.log ("Inside Loop 3");
         return fileReader.readAsText(file)
     }
 }
@@ -26,7 +31,5 @@ function getWords(s) {
     }
     return result;
 }
-
-
-let fileInput = document.getElementById('fileinput');
+ fileInput = document.getElementById('fileinput');
 fileInput.addEventListener('change', getSingleFileAsText, false);
