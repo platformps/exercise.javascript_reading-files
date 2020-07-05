@@ -9,9 +9,10 @@ function getSingleFileAsText(evt) {
     let file = evt.target.files[0];
     if (file) {
         let fileReader = new FileReader();
-        fileReader.onload = function(event) {
+        fileReader.onload = function (event) {
             let contents = event.target.result;
             let words = getWords(contents);
+            console.log(words);
         }
         return fileReader.readAsText(file)
     }
